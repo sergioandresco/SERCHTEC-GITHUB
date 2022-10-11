@@ -162,9 +162,78 @@ body{
 /* Knowledge */
 
 .knowledge{
-    background-color: #e5e5f7;
-    background: linear-gradient(135deg, #444cf755 25%, transparent 25%) -10px 0/ 20px 20px, linear-gradient(225deg, #444cf7 25%, transparent 25%) -10px 0/ 20px 20px, linear-gradient(315deg, #444cf755 25%, transparent 25%) 0px 0/ 20px 20px, linear-gradient(45deg, #444cf7 25%, #e5e5f7 25%) 0px 0/ 20px 20px;
+    background-color: #e3e3ef;
+    background-image:  radial-gradient(#444cf7 0.5px, transparent 0.5px), radial-gradient(#444cf7 0.5px, #e3e3ef 0.5px);
+    background-size: 20px 20px;
+    background-position: 0 0,10px 10px;
     overflow: hidden;
 }
 
+.knowledge__container{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1em;
+    align-items: center;
+}
+
+.knowledge__picture{
+    max-width: 500px;
+}
+
+.knowledge__paragraph{
+    line-height: 1.7;
+}
+
+.knowledge__img{
+    width: 100%;
+    display: block;
+}
+
+/* Creador */
+
+.creador{
+    background-color: #fff;
+}
+
+.creador__container{
+    display: grid;
+    grid-template-columns: 50px 1fr 50px;
+    gap: 1em;
+    align-items: center;
+}
+
+.creador__body{
+    display:grid;
+    grid-template-columns: 1fr max-content;
+    justify-content: space-between;
+    align-items: center;
+    gap: 2em;
+    grid-column: 1/3;
+    grid-row: 1/2;
+}
+
+.creador__body--show{
+    pointer-events: unset;
+    opacity: 1;
+    transition: opacity 1.5s ease-in-out;
+}
+
+.creador__img{
+    width: 250px;
+    height: 250px;
+    border-radius: 50%;
+    object-fit: cover;
+    object-position: 60% 30%;
+}
+
+.creador__text{
+    max-width: 700px;
+}
+
+.creador__course{
+    background-color: #4C14C4;
+    color: white;
+    display: inline-block;
+    padding: 5px;
+}
 

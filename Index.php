@@ -26,27 +26,27 @@
             <ul class="nav__link nav__link--menu">
 
                 <li class="nav__items">
-                    <a href="#" class="nav__links">Inicio</a>
+                    <a href="Index.php" class="nav__links">Inicio</a>
                 </li>
 
                 <li class="nav__items">
-                    <a href="#" class="nav__links">Tecnología</a>
+                    <a class="nav__links" href="./Contenido/Tecnologia.php">Tecnología</a>
                 </li>
 
                 <li class="nav__items">
-                    <a href="#" class="nav__links">Mundo Gamer</a>
+                    <a href="./Contenido/Mundo_Gamer.php" class="nav__links">Mundo Gamer</a>
                 </li>
 
                 <li class="nav__items">
-                    <a href="#" class="nav__links">Música</a>
+                    <a href="./Contenido/Musica.php" class="nav__links">Música</a>
                 </li>
 
                 <li class="nav__items">
-                    <a href="#" class="nav__links">Moda</a>
+                    <a href="./Contenido/Moda.php" class="nav__links">Moda</a>
                 </li>
 
                 <li class="nav__items">
-                    <a href="#" class="nav__links">Emprendimientos</a>
+                    <a href="./Contenido/Emprendimientos.php" class="nav__links">Emprendimientos</a>
                 </li>
 
                 <img src="./images/close.svg" alt="" class="nav__close">

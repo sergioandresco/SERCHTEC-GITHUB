@@ -7,6 +7,20 @@
 
 body{
     font-family: 'Poppins', sans-serif;
+
+}
+
+.container__fondo{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: linear-gradient(180deg, #0000008c 0%, #0000008c 100%), url('../Images/Banner_Serch.png');
+    background-size: cover;
+    z-index: -1;
+
 }
 
 .container {
@@ -15,32 +29,11 @@ body{
     margin: 0 auto;
     overflow: hidden;
     padding: var(--padding-container);
-}
-
-.hero_tec {
-    width: 100%;
-    height: 100vh;
-    min-height: 600px;
-    max-height: 800px;
-    position: relative;
-    display: grid;
-    grid-template-rows: 200px 1fr;
-    color: white;
 
 }
 
-.hero_tec::before{
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-image: linear-gradient(180deg, #0000008c 0%, #0000008c 100%), url('../images/tec_page.jpeg');
-    background-size: cover;
-    clip-path: polygon(0 0, 100% 0, 100% 80%, 50% 95%, 0 80%);
-    z-index: -1;
-
+.container_2{
+    background-image: linear-gradient(180deg, #0000008c 0%, #0000008c 100%), url('../Images/Banner_Serch.png');
 }
 
 .hero {
@@ -62,7 +55,7 @@ body{
     left: 0;
     width: 100%;
     height: 100%;
-    background-image: linear-gradient(180deg, #0000008c 0%, #0000008c 100%), url('../images/Banner_Serch.png');
+    background-image: linear-gradient(180deg, #0000008c 0%, #0000008c 100%), url('../Images/fondostecnologicos.jpeg');
     background-size: cover;
     clip-path: polygon(0 0, 100% 0, 100% 67%, 50% 89%, 0 67%);
     z-index: -1;

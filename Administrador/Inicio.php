@@ -49,20 +49,21 @@ if(!isset($_SESSION['usuario'])){
                 </li>
 
                 <li class="nav__items">
-                    <a class="nav__links" href="<?php echo $url; ?>/administrador/Inicio.php">Inicio</a>
+                    <a class="nav__links" href="Inicio.php">Inicio</a>
                 </li>
 
                 <li class="nav__items">
-                    <a href="<?php echo $url; ?>/Administrador/seccion/post.php" class="nav__links">Subir Articulos</a>
+                    <a href="./Sesion/Articulos.php" class="nav__links">Subir Articulos</a>
                 </li>
 
                 <li class="nav__items">
-                    <a href="<?php echo $url; ?>/Administrador/seccion/cerrar.php"" class="nav__links">Cerrar sesion</a>
+                    <a href="<?php echo $url; ?>" class="nav__links">Blog SerchTec</a>
                 </li>
 
                 <li class="nav__items">
-                    <a href="<?php echo $url; ?>" class="nav__links">Ver Pagina principal de SerchTec</a>
+                    <a href="./Sesion/Cerrar.php" class="nav__links">Cerrar sesion</a>
                 </li>
+
 
                 <img src="./images/close.svg" alt="" class="nav__close">
             </ul>

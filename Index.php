@@ -26,7 +26,7 @@
             <ul class="nav__link nav__link--menu">
 
                 <li class="nav__items">
-                    <a href="Index.php" class="nav__links">Inicio</a>
+                    <a href="Index.php" class="nav__links">Inicio --- HOLA</a>
                 </li>
 
                 <li class="nav__items">
@@ -124,7 +124,7 @@
             <div class="creador__container container">
                 <section class="creador__body creador__body--show" data-id="1">
                     <div class="creador__text">
-                        <h2 class="subtitle">Mi nombre es Sergio Andres Cobos Suarez<span class="creador__course">Ingeniero de Sistemas - Desarrollador Web</span></h2>
+                        <h2 class="subtitle">Sergio Andres Cobos Suarez<span class="creador__course">Ingeniero de Sistemas - Desarrollador Web</span></h2>
                         <p class="creador__review">Soy Ingeniero de Sistemas y desarrollador Web Colombiano, tengo 23 años de edad, soy papá de un hijo gatuno llamado King, y la idea que tuve de crear este Blog, principalmente es para poder mostrar e informarle a la gente sobre noticias, y articulos de temas especificos, como la música, la tecnología, la moda, el mundo Gamer e incluso emprendimientos de jovenes Colombianos con muchas ganas de crecer, para poder alejar nuestras perspectivas sobre noticias malas que ocurren en el mundo diariamente, por tal motivo, es que quise crear un rincon en el cual puedas leer algún articulo de interes, que te emocione, te den ganas de investigar más allá y que lo puedas disfrutar como lector. </p>
                     </div>
                     <figure class="creador__picture">

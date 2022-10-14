@@ -26,7 +26,7 @@
             <ul class="nav__link nav__link--menu">
 
                 <li class="nav__items">
-                    <a href="Index.php" class="nav__links">Inicio --- HOLA</a>
+                    <a href="Index.php" class="nav__links">Inicio</a>
                 </li>
 
                 <li class="nav__items">

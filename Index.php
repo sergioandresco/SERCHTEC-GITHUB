@@ -16,6 +16,7 @@
     <header class="hero">
         <nav class="nav container">
             <div class="nav__logo">
+                <h1>ESTO ES UNA PRUEBAAAAAAAA</h1>
                 <h2 class="nav__title">SERCHTEC
                     <img src="./images/glasses.svg" class="icon__logo">
 

@@ -23,14 +23,14 @@ if(!isset($_SESSION['usuario'])){
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" href="./images/favicon-16x16.png" type="image/x-icon">
     <link rel="stylesheet" href="./css/normalize.css">
-    <link rel="stylesheet" href="./css/estilos2.css">
+    <link rel="stylesheet" href="./css/estilos2.css"> 
 
     <title>Administrador</title>
 
 </head>
 <body>
 
-<?php $url= "http://".$_SERVER['HTTP_HOST']."/Blog/Index.php" ?>
+<?php $url= "http://".$_SERVER['HTTP_HOST']."/SERCHTEC-GITHUB/Index.php" ?>
 
 <header class="hero">
         <nav class="nav container">

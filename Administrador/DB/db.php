@@ -1,7 +1,7 @@
 <?php
 
 $host="localhost";
-$bd="SerchTec";
+$bd="serchblog";
 $usuario="root";
 $contrasenia="";
 

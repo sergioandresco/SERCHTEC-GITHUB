@@ -8,6 +8,8 @@ El Blog se desarrolla con lenguajes de desarrollo web tales como PHP, JS, lengua
 <a> <img src="https://user-images.githubusercontent.com/43445037/200247288-aa7b173a-af4c-4b17-a84e-268ee327c896.png" alt="gif2" width="500" height="300"/> </a>
 </div>
 
+</br>
+
 <div align="center">
 <a> <img src="https://user-images.githubusercontent.com/43445037/174461092-efe9737d-f798-459b-bf9f-99b5c89e3203.gif" alt="gif2" width="500" height="300"/> </a>
 </div>

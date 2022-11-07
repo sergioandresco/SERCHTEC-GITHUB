@@ -15,9 +15,10 @@ switch($accion){
         case "Agregar":
 
             $sentenciaSQL= $conexion->prepare("INSERT INTO articulos (titulo_articulo, fecha, autor_articulo, texto_articulo, imagen) VALUES (:titulo_articulo, :fecha, :autor_articulo, :texto_articulo :imagen);");
-            $sentenciaSQL->bindParam(':nombre',$txtTitulo);
-            $sentenciaSQL->bindParam(':nombre',$txtTitulo);
-            $sentenciaSQL->bindParam(':nombre',$txtTitulo);
+            $sentenciaSQL->bindParam(':titulo_articulo',$txtTitulo);
+            $sentenciaSQL->bindParam(':fecha',$txtFecha);
+            $sentenciaSQL->bindParam(':autor_articulo',$txtNombreAutor);
+            $sentenciaSQL->bindParam(':texto_articulo',$txtTexto);
 
 
             $fecha= new DateTime();
@@ -30,13 +31,13 @@ switch($accion){
             }
             $sentenciaSQL->bindParam(':imagen',$nombreArchivo);
             $sentenciaSQL->execute();
-            header("Location:post.php");
+            header("Location:Articulos.php");
             break;
 
         case "Modificar":
 
-            $sentenciaSQL= $conexion->prepare("UPDATE post SET nombre=:nombre WHERE id=:id");
-            $sentenciaSQL->bindParam(':nombre',$txtNombre);
+            $sentenciaSQL= $conexion->prepare("UPDATE articulos SET titulo_articulo=:titulo_articulo WHERE id=:id");
+            $sentenciaSQL->bindParam(':titulo_articulo',$txtTitulo);
             $sentenciaSQL->bindParam(':id',$txtID);
             $sentenciaSQL->execute();
 
@@ -48,7 +49,7 @@ switch($accion){
             $tmpImagen=$_FILES["txtImagen"]["tmp_name"];
             move_uploaded_file($tmpImagen,"../../img/".$nombreArchivo);
 
-            $sentenciaSQL= $conexion->prepare("SELECT imagen FROM post WHERE id=:id");
+            $sentenciaSQL= $conexion->prepare("SELECT imagen FROM articulos WHERE id=:id");
             $sentenciaSQL->bindParam(':id',$txtID);
             $sentenciaSQL->execute();
             $Post=$sentenciaSQL->fetch(PDO::FETCH_LAZY);
@@ -62,32 +63,32 @@ switch($accion){
 
             }
 
-            $sentenciaSQL= $conexion->prepare("UPDATE post SET imagen=:imagen WHERE id=:id");
+            $sentenciaSQL= $conexion->prepare("UPDATE articulos SET imagen=:imagen WHERE id=:id");
             $sentenciaSQL->bindParam(':imagen',$nombreArchivo);
             $sentenciaSQL->bindParam(':id',$txtID);
             $sentenciaSQL->execute();
 
             }
-            header("Location:post.php");
+            header("Location:Articulos.php");
             break;
 
         case "Cancelar":
-            header("Location:post.php");
+            header("Location:Articulos.php");
             break;
 
         case "Seleccionar":
-            $sentenciaSQL= $conexion->prepare("SELECT * FROM post WHERE id=:id");
+            $sentenciaSQL= $conexion->prepare("SELECT * FROM articulos WHERE id=:id");
             $sentenciaSQL->bindParam(':id',$txtID);
             $sentenciaSQL->execute();
             $Post=$sentenciaSQL->fetch(PDO::FETCH_LAZY);
 
-            $txtNombre=$Post['nombre'];
+            $txtTitulo=$Post['titulo_articulo'];
             $txtImagen=$Post['imagen'];
             break;
 
         case "Borrar":
 
-            $sentenciaSQL= $conexion->prepare("SELECT imagen FROM post WHERE id=:id");
+            $sentenciaSQL= $conexion->prepare("SELECT imagen FROM articulos WHERE id=:id");
             $sentenciaSQL->bindParam(':id',$txtID);
             $sentenciaSQL->execute();
             $Post=$sentenciaSQL->fetch(PDO::FETCH_LAZY);
@@ -101,11 +102,11 @@ switch($accion){
 
             }
 
-            $sentenciaSQL= $conexion->prepare("DELETE FROM post WHERE id=:id");
+            $sentenciaSQL= $conexion->prepare("DELETE FROM articulos WHERE id=:id");
             $sentenciaSQL->bindParam(':id',$txtID);
             $sentenciaSQL->execute();
 
-            header("Location:post.php");
+            header("Location:Articulos.php");
             break;
 
 }
@@ -120,12 +121,14 @@ $listaPost=$sentenciaSQL->fetchAll(PDO::FETCH_ASSOC);
 <html lang="en">
 <head>
 <meta charset="UTF-8">
+
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="shortcut icon" href="./images/favicon-16x16.png" type="image/x-icon">
+    <link rel="shortcut icon" href="../Images/favicon-16x16.png" type="image/x-icon">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="../css/normalize.css">
     <link rel="stylesheet" href="../css/estilos2.css"> 
+
     <title>Administrador</title>
 
 </head>
@@ -145,11 +148,7 @@ $listaPost=$sentenciaSQL->fetchAll(PDO::FETCH_ASSOC);
             <ul class="nav__link nav__link--menu">
 
                 <li class="nav__items">
-                    <a href="#" class="nav__links">Adiministrador de SerchTec</a>
-                </li>
-
-                <li class="nav__items">
-                    <a class="nav__links" href="../Inicio.php">Inicio</a>
+                    <a class="nav__links" href="../Inicio.php">Inicio Administrador</a>
                 </li>
 
                 <li class="nav__items">
@@ -192,7 +191,7 @@ $listaPost=$sentenciaSQL->fetchAll(PDO::FETCH_ASSOC);
 
     <div class = "form-group">
     <label for="txtID">ID: </label>
-    <input type="text" required readonly  class="form-control" value="<?php echo $txtID; ?>" name="txtID" id="txtID" placeholder="Ingrese el ID del usuario">
+    <input type="text" required readonly  class="form-control" value="<?php echo $txtID; ?>" name="txtID" id="txtID" placeholder="Ingrese el ID del articulo">
     </div>
 
     <div class = "form-group">
@@ -212,12 +211,12 @@ $listaPost=$sentenciaSQL->fetchAll(PDO::FETCH_ASSOC);
 
     <div class = "form-group">
     <label for="txtTexto">Texto del articulo:</label>
-    <input type="text" required class="form-control" value="<?php echo $txtTexto; ?>" name="txtTexto" id="txtTexto" placeholder="Ingrese la información del articulo">
+    <textarea type="text" required class="form-control" value="<?php echo $txtTexto; ?>" name="txtTexto" id="txtTexto" placeholder="Ingrese el texto del articulo"></textarea>
     </div>
 
     <div class = "form-group">
 
-    <label for="txtImagen">Imagen</label>
+    <label for="txtImagen">Imagen del articulo</label>
 
 </br>
 

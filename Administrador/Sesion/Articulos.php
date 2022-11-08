@@ -189,6 +189,16 @@ $listaPost=$sentenciaSQL->fetchAll(PDO::FETCH_ASSOC);
 
         <form method="POST" enctype="multipart/form-data">
 
+        Selecciona la categoría en la cual vas añadir el articulo<select class = "form-control" name = "txtCarrera" required><br>
+
+            <option value = "Tecnologia">Tecnología</option>
+            <option value = "Gamer">Mundo Gamer</option>
+            <option value = "Musica">Música</option>
+            <option value = "Moda">Moda</option>
+            <option value = "Emprendimientos">Emprendimientos</option>
+
+        </select></br>
+
     <div class = "form-group">
     <label for="txtID">ID: </label>
     <input type="text" required readonly  class="form-control" value="<?php echo $txtID; ?>" name="txtID" id="txtID" placeholder="Ingrese el ID del articulo">

@@ -1,3 +1,11 @@
+<?php include("Administrador/DB/db.php"); 
+$sentenciaSQL= $conexion->prepare("SELECT * FROM articulos");
+$sentenciaSQL->execute();
+$listaPost=$sentenciaSQL->fetchAll(PDO::FETCH_ASSOC);
+?>
+
+<?php foreach($listaPost as $Post){?>
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -63,6 +71,17 @@
 
     </header>
 
+    <div class="col-md-3">
+        <div class="card">
+            <audio controls>
+                <source  src="./img/<?php echo $Post['imagen']; ?>" alt="">
+            </audio>
+            <div class="card-body">
+                <h4 class="card-title"><?php echo $Post['nombre']; ?></h4>
+            </div>
+        </div>
+    </div>
+
 
     <footer class="footer">
         <section class="footer__container container">
@@ -116,3 +135,4 @@
     </body>
 </html>
 
+<?php }?>
